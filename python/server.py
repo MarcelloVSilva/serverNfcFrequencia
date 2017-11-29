@@ -31,7 +31,7 @@ jsonTeacher = json.dumps(
     }, separators=(',',':'))
 print jsonTeacher
 
-host = "192.168.15.24" # 192.168.6.72(inf) /192.168.15.24 (trabalho) / 192.168.0.19 (casa)  socket.gethostbyname(socket.gethostname())
+host = "192.168.1.107" # 192.168.6.72(inf) /192.168.15.24 (trabalho) / 192.168.0.19 (casa)  socket.gethostbyname(socket.gethostname())
 server = SimpleXMLRPCServer((host, 2000))
 print host, "Server conectado a porta 2000..."
 

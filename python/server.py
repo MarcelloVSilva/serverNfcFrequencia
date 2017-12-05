@@ -31,7 +31,7 @@ jsonTeacher = json.dumps(
     }, separators=(',',':'))
 print jsonTeacher
 
-host = "192.168.1.107" # 192.168.6.72(inf) /192.168.15.24 (trabalho) / 192.168.0.19 (casa)  socket.gethostbyname(socket.gethostname())
+host = "localhost" # socket.gethostbyname(socket.gethostname())
 server = SimpleXMLRPCServer((host, 2000))
 print host, "Server conectado a porta 2000..."
 
@@ -39,13 +39,12 @@ def getInfoTeacher(idTeacher):
     print idTeacher
     return jsonTeacher
 
+
+def sendFreqList(listFreq):
+    print listFreq
+    return "Frequência realizada"
+
 server.register_function(getInfoTeacher, "getInfoTeacher")
+server.register_function(sendFreqList, "sendFreqList")
+
 server.serve_forever()
-
-
-
-
-                # ['-16.604074', '-49.264518'],
-                # ['-16.604206', '-49.264484'],
-                # ['-16.604320', '-49.264900'],
-                # ['-16.604183', '-49.264949'],
